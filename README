@@ -8,6 +8,23 @@ NOTE: This plugin is in super-alpha-please-be-careful-with-me form. It's very ro
 YOUR HELP IS NEEDED TO IMPROVE THIS PLUGIN! Please fork it, add tests, add documentation, add code, and send me pull requests. Thanks,
 Bruno
 
+Installation
+============
+
+1. Install the plugin into your vendor directory: 
+
+  script/plugin install git://github.com/bborn/community_engine_groups.git
+
+2. Create and run its migrations:
+
+  script/generate plugin_migration
+  rake db:migrate
+  
+3. Run tests (well, there aren't many yet but there should be, soon)
+
+4. Start your server.
+
+Go to /groups to see what's available. Administrators can create new groups.
 
 THANKS
 ======
