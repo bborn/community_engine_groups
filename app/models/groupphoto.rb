@@ -1,16 +1,3 @@
-# missing_thumb: '/plugin_assets/community_engine/images/icon_missing_thumb.gif'
-# missing_medium: "/plugin_assets/community_engine/images/icon_missing_medium.gif"
-# attachment_fu_options:
-#   resize_to: "465>"
-#   min_size: 1
-#   #size in megabytes
-#   max_size: 3
-#   thumbnails: {thumb: "100x100!", medium: "290x320!", large: "664>"}
-#   #options - 's3', 'file_system', 'db_system' - see attachment_fu for details
-#   storage: 'file_system'
-#   content_type: ['image/jpg', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png']
-
-
 class Groupphoto < ActiveRecord::Base
   acts_as_commentable
   
