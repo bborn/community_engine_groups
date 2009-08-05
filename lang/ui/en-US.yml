@@ -1,10 +1,11 @@
-#Group Additions Begin
+en:
+  #Group Additions Begin
   thumbnail: Thumbnail
   add: Add
   remove: Remove
   tell_us: Tell us what do you think!
 
-#Memberships
+  #Memberships
   request_membership: I'm a fan!!
   sorry_there_was_an_error_requesting_membership: Sorry, there was an error requesting membership.
   requesting_membership: Requesting membership
@@ -16,34 +17,34 @@
   my_members: Our Fans
   view_all_my_member_requests: View all fan requests
 
-#Groups
+  #Groups
   groups: Groups
   new_group: New Group
   editing_group: Editing Group
   edit_group: Edit Group Details
-  site_groups: "{site} Groups"
+  site_groups: "{{site}} Groups"
   created_a_group: created a new Group
   search_groups: Search Groups
   group_name: Group Name
   back_to_all_groups: Back to all Groups
   group_details: Group Details
   group_views: Group Views
-  small_group: "{group} doesn't have much here yet. Stay tuned."
+  small_group: "{{group}} doesn't have much here yet. Stay tuned."
   groups_recent_comments: Recent comments
   group_comments: Group comments
   group_roster: Manage Group Roster
   manager_controls: Group Manager Controls
   make_fan: Add to Fans
-  is_now_a: "{user} is now a {rolename} with the {group} Group"
+  is_now_a: "{{user}} is now a {{rolename}} with the {{group}} Group"
 
 
-#GroupPhotos
+  #GroupPhotos
   choose_a_photo_for_your_group: Choose a Photo for your Group
   group_photo: Group Photo
   add_a_groupphoto: Add Group Photo
   view_all_groupphotos: Check out all Group Photos
   group_photos: Group Photos
-  groups_groupphotos: "{group}'s Photos"
+  groups_groupphotos: "{{group}}'s Photos"
   new_groupphoto: New photo
   groupphoto_tip_1: Photos show your Group to the world. Pick your best pics, and give them good titles and descriptions.
   groupphoto_tip_2: Use tags to organize your photos. Separate tags with commas.

@@ -18,7 +18,7 @@
       = file_field :groupphoto, :uploaded_data, :size => "20"
       %label
         %em
-          = (AppConfig.groupphoto['attachment_fu_options']['max_size']) 
+          = (AppConfig.photo['attachment_fu_options']['max_size']) 
           = " " + :megabyte_upload_limit.l
       %label 
         =:tags.l + ":"

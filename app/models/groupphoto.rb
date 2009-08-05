@@ -1,7 +1,7 @@
 class Groupphoto < ActiveRecord::Base
   acts_as_commentable
   
-  has_attachment prepare_options_for_attachment_fu(AppConfig.groupphoto['attachment_fu_options'])
+  has_attachment prepare_options_for_attachment_fu(AppConfig.photo['attachment_fu_options'])
 
   acts_as_taggable
 

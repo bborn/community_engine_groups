@@ -14,7 +14,7 @@
       .pagination= paginating_links @groups, :params => params if @groups.page_count > 1
 
       %br.clear
-      - if @groups.count > 0
+      - if @groups.any?
         = render :partial => "groups/group", :collection => @groups
 
       %br.clear

@@ -7,7 +7,6 @@ resources :groups, :member => {
   group.resources :memberships, :member => { :accept => :put, :deny => :put }, :collection => { :accepted => :get, :pending => :get, :denied => :get }
 end
 
-
 resources :groups, :belongs_to => :user
 
 memberships '/memberships', :controller => 'memberships', :action => 'index'

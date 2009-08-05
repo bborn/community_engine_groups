@@ -6,7 +6,7 @@
       .yui-u.first
         %h2= link_to group.name, group_path(group)
         %p= "Owner:" + group.owner.login
-        %p= "Members:" + group.members_in_role("Fan", true).count.to_s
+        %p= "Members:" + group.members_in_role("Fan", true).size.to_s
       
         
       .yui-u{"style"=>"overflow:hidden"}

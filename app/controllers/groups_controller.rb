@@ -3,7 +3,7 @@ class GroupsController < BaseController
   cache_sweeper :taggable_sweeper, :only => [:activate, :update, :destroy]  
   
   uses_tiny_mce(:options => AppConfig.default_mce_options.merge({:editor_selector => "rich_text_editor"}), 
-    :only => [:new, :create, :update, :edit])
+    :only => [:new, :create, :update, :edit, :show])
 
   before_filter :admin_required, :except => [:index, :show]
 
@@ -25,8 +25,6 @@ class GroupsController < BaseController
     end
   end
 
-  # GET /groups/1
-  # GET /groups/1.xml
   def show
     @group = Group.find(params[:id])
     @groupphoto_comments = Comment.find_groupphoto_comments_for(@group)  
