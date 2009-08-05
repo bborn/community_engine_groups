@@ -1,0 +1,8 @@
+.box
+  %h3=:recent_groupphotos.l
+
+  .pagination= paginating_links @groupphotos if @groupphotos.page_count > 1
+
+  %ul
+    - @groupphotos.each do |groupphoto|
+      %li= image_tag groupphoto.public_filename(:thumb) 

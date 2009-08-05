@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mygtms_milliondollarproject/!svn/ver/123/trunk/app/views/memberships
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/memberships/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/memberships/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/memberships/new.html.erb
+END
+pending.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/mygtms_milliondollarproject/!svn/ver/123/trunk/app/views/memberships/pending.html.haml
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/memberships/show.html.erb
+END
+accepted.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mygtms_milliondollarproject/!svn/ver/123/trunk/app/views/memberships/accepted.html.haml
+END
+denied.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mygtms_milliondollarproject/!svn/ver/123/trunk/app/views/memberships/denied.html.haml
+END
+_membership.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/mygtms_milliondollarproject/!svn/ver/123/trunk/app/views/memberships/_membership.html.haml
+END

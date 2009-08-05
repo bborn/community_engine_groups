@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/mygtms_milliondollarproject/!svn/ver/137/trunk/app/views/groups
+END
+roster.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mygtms_milliondollarproject/!svn/ver/137/trunk/app/views/groups/roster.html.haml
+END
+_profile_group_info_sidebar.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/mygtms_milliondollarproject/!svn/ver/134/trunk/app/views/groups/_profile_group_info_sidebar.html.haml
+END
+_search_options.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/mygtms_milliondollarproject/!svn/ver/116/trunk/app/views/groups/_search_options.html.haml
+END
+show.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/mygtms_milliondollarproject/!svn/ver/134/trunk/app/views/groups/show.html.haml
+END
+edit.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/mygtms_milliondollarproject/!svn/ver/134/trunk/app/views/groups/edit.html.haml
+END
+index.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/mygtms_milliondollarproject/!svn/ver/118/trunk/app/views/groups/index.html.haml
+END
+new.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/mygtms_milliondollarproject/!svn/ver/107/trunk/app/views/groups/new.html.haml
+END
+_group.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mygtms_milliondollarproject/!svn/ver/119/trunk/app/views/groups/_group.html.haml
+END

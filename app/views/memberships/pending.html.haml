@@ -1,0 +1,7 @@
+.yui-b= render :partial => 'groups/profile_group_info_sidebar'
+
+#yui-main
+  .yui-b
+    #members.box
+      %h3= :pending_memberships.l
+      .user_list= render :partial => "memberships/membership", :collection => @memberships

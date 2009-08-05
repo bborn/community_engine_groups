@@ -1,0 +1,39 @@
+- if current_user && current_user == @group.owner
+  .box.first_alt.alt
+    %h3
+      =:manager_controls.l
+    %p
+      = link_to :edit_group.l, edit_group_path(@group)
+      %br
+      = link_to :group_roster.l, roster_group_path(@group)
+
+#profile_details.box.hentry
+  %h3
+    = link_to @group.name, group_path(@group)
+
+  .centered
+    - if @group.avatar
+      = image_tag( @group.avatar_photo_url(:medium), :class => 'polaroid')
+    - elsif @is_group_owner
+      = image_tag( @group.avatar_photo_url(:medium), :class => "polaroid")
+      %br
+      =:no_profile_groupphoto.l
+      = link_to :click_here_to_upload_one.l, edit_group_path(@group)
+
+  - if current_user and current_user.can_request_membership_with(@group)
+    = add_member_link(@group)
+
+  %h3=:group_details.l
+  .vcard.author
+    %ul
+      %li.update
+        %a{:href=>"#{group_path(@group)}", :rel=>"bookmark"}
+          %abbr.published{:title=>"#{@group.created_at}"}
+            = :member_since.l + @group.created_at.strftime(": %m/%d/%y")          
+      %li.view
+        =:group_views.l
+        = "(#{@group.view_count})"
+      - if @group.tags.any?
+        %li.tags= :my_tags.l+": #{@group.tags.collect{|t| link_to t.name, tag_url(t.name) }.join(", ")}"
+      - if @group.metro_area
+        %li.geo= link_to( @group.full_location, groups_path(:metro_area_id => @group.metro_area_id, :state_id => @group.state_id, :country_id => @group.country_id ) ) 

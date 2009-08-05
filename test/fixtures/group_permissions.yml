@@ -1,0 +1,6 @@
+ownerPermission:
+    id: 1
+    membership_id: 1
+    group_role_id: 4
+    created_at: <%= 5.days.ago.to_s :db %>
+    updated_at: <%= 5.days.ago.to_s :db %>

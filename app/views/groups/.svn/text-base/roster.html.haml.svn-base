@@ -1,0 +1,59 @@
+%table.grid_table.fullscreen{ :cellpadding => "0", :border => "0"}
+  %tr{ :align => "center"}
+    %th
+      \#
+    %th
+      Photo
+    %th
+      Name
+    %th
+      Team Role
+    %th
+      Manage
+  - @group.members_in_role(["Owner"]).each do |member|
+    %tr{ :align => "center", :class => cycle("even", "odd") }
+      %td
+        = member.user.id
+      %td
+        = image_tag( member.user.avatar_photo_url(:thumb), :class => "polaroid", :height => 50 )
+      %td
+        = member.user.login
+      %td
+        = "Owner"
+      %td
+  %tr{ :align => "center"}
+    %th{ :colspan => "5", :style => "text-align:right;" }
+      = pluralize(@group.members_in_role(["Owner"]).size," Owner")
+  - @group.members_in_role(["Player"]).each do |member|
+    %tr{ :align => "center", :class => cycle("even", "odd") }
+      %td
+        = member.user.id
+      %td
+        = image_tag( member.user.avatar_photo_url(:thumb), :class => "polaroid", :height => 50 )
+      %td
+        = member.user.login
+      %td
+        = "Player"
+      %td.manager{ :align => "center" }
+        = link_to(:make_fan.l, make_fan_group_membership_path(member.group, member), :method => :put, :class => 'button negative')
+  %tr{ :align => "center"}
+    %th{ :colspan => "5", :style => "text-align:right;" }
+      = pluralize(@group.members_in_role(["Player"]).size," Player")
+  - @group.members_in_role(["Fan"]).each do |member|
+    %tr{ :align => "center", :class => cycle("even", "odd") }
+      %td
+        = member.user.id
+      %td
+        = image_tag( member.user.avatar_photo_url(:thumb), :class => "polaroid", :height => 50 )
+      %td
+        = member.user.login
+      %td
+        = "Fan"
+      %td.manager{ :align => "center" }
+        = link_to(:make_player.l, make_player_group_membership_path(member.group, member), :method => :put, :class => 'button negative')
+  %tr{ :align => "center"}
+    %th{ :colspan => "5", :style => "text-align:right;" }
+      = pluralize(@group.members_in_role(["Fan"]).size," Fan")
+  %tr{ :align => "left" }
+    %th{ :colspan => "5", :style => "text-align:right;" }
+      = pluralize(@group.members_in_role(["Owner","Fan","Player"]).size," Total Member")

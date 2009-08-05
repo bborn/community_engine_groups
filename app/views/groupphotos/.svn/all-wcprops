@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/mygtms_milliondollarproject/!svn/ver/126/trunk/app/views/groupphotos
+END
+_manage_groupphotos.haml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/mygtms_milliondollarproject/!svn/ver/112/trunk/app/views/groupphotos/_manage_groupphotos.haml
+END
+recent.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/mygtms_milliondollarproject/!svn/ver/112/trunk/app/views/groupphotos/recent.html.haml
+END
+show.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/mygtms_milliondollarproject/!svn/ver/126/trunk/app/views/groupphotos/show.html.haml
+END
+slideshow.rhtml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/mygtms_milliondollarproject/!svn/ver/112/trunk/app/views/groupphotos/slideshow.rhtml
+END
+edit.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/mygtms_milliondollarproject/!svn/ver/112/trunk/app/views/groupphotos/edit.html.haml
+END
+index.rxml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/mygtms_milliondollarproject/!svn/ver/112/trunk/app/views/groupphotos/index.rxml
+END
+index.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/mygtms_milliondollarproject/!svn/ver/113/trunk/app/views/groupphotos/index.html.haml
+END
+_show_image_list.haml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/mygtms_milliondollarproject/!svn/ver/112/trunk/app/views/groupphotos/_show_image_list.haml
+END
+new.html.haml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/mygtms_milliondollarproject/!svn/ver/113/trunk/app/views/groupphotos/new.html.haml
+END
+manage_groupphotos.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/mygtms_milliondollarproject/!svn/ver/112/trunk/app/views/groupphotos/manage_groupphotos.rjs
+END

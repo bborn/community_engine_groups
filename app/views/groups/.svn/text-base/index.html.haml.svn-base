@@ -1,0 +1,22 @@
+- @section = 'groups'
+
+.yui-b
+  = render :partial => 'groups/search_options'
+  
+#yui-main
+  .yui-b
+    .box.group_list
+      - if current_user and not current_user.sports.empty? 
+        = link_to :new_group.l, new_group_path
+
+      %h3=:site_groups.l :site => AppConfig.community_name
+
+      .pagination= paginating_links @groups, :params => params if @groups.page_count > 1
+
+      %br.clear
+
+      = render :partial => "groups/group", :collection => @groups
+
+      %br.clear
+      .pagination= paginating_links @groups, :params => params if @groups.page_count > 1
+

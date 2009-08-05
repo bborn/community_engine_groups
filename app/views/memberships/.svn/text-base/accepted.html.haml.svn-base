@@ -1,0 +1,14 @@
+.yui-b= render :partial => 'groups/profile_group_info_sidebar'
+
+#yui-main
+  .yui-b
+    #members.box
+      %h3
+        = @member_count
+        =:accepted_memberships.l
+        = link_to "(#{@pending_memberships_count} "+:pending.l+")", pending_group_memberships_path(@group) if  (@pending_memberships_count > 0)
+      .pagination=paginating_links @memberships if @memberships.page_count > 1
+      
+      .clear
+      .user_list= render :partial => "memberships/membership", :collection => @memberships
+

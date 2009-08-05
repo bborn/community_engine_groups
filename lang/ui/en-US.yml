@@ -1,0 +1,65 @@
+#Group Additions Begin
+  thumbnail: Thumbnail
+  add: Add
+  remove: Remove
+  tell_us: Tell us what do you think!
+
+#Memberships
+  request_membership: I'm a fan!!
+  sorry_there_was_an_error_requesting_membership: Sorry, there was an error requesting membership.
+  requesting_membership: Requesting membership
+  membership_requested: Requested membership with {group}.
+  requested_membership_with: Requested membership with
+  pending_memberships: Pending Memberships
+  accepted_memberships: Accepted Memberships
+  the_membership_was_accepted: The membership was accepted
+  my_members: Our Fans
+  view_all_my_member_requests: View all fan requests
+
+#Groups
+  groups: Groups
+  new_group: New Group
+  editing_group: Editing Group
+  edit_group: Edit Group Details
+  site_groups: "{site} Groups"
+  created_a_group: created a new Group
+  search_groups: Search Groups
+  group_name: Group Name
+  back_to_all_groups: Back to all Groups
+  group_details: Group Details
+  group_views: Group Views
+  small_group: "{group} doesn't have much here yet. Stay tuned."
+  groups_recent_comments: Recent comments
+  group_comments: Group comments
+  group_roster: Manage Group Roster
+  manager_controls: Group Manager Controls
+  make_fan: Add to Fans
+  is_now_a: "{user} is now a {rolename} with the {group} Group"
+
+
+#GroupPhotos
+  choose_a_photo_for_your_group: Choose a Photo for your Group
+  group_photo: Group Photo
+  add_a_groupphoto: Add Group Photo
+  view_all_groupphotos: Check out all Group Photos
+  group_photos: Group Photos
+  groups_groupphotos: "{group}'s Photos"
+  new_groupphoto: New photo
+  groupphoto_tip_1: Photos show your Group to the world. Pick your best pics, and give them good titles and descriptions.
+  groupphoto_tip_2: Use tags to organize your photos. Separate tags with commas.
+  back_to_my_groupphotos: Back to your Groups photos
+  cancel_and_go_back_to_my_groupphotos: cancel and go back to your Groups photos
+  related_groupphotos_all_members: Related Photos (all members)
+  groupphotos: Group Photos
+  make_this_my_profile_groupphoto: Make this my Groups profile photo
+  edit_this_groupphoto_details: Edit this photo
+  delete_this_groupphoto: Delete this photo
+  groupphoto_comments: Photo comments
+  tags_are_keywords_you_use_to_organize_your_groupphotos: Tags are keywords you use to organize your photos. Separate multiple tags with commas.
+  show_this_groupphoto: Show this photo
+  back_to_my_groupphotos: Back to Groups photos
+  are_you_sure_you_want_to_delete_this_groupphoto: "Are you sure you want to delete this photo?"
+  editing_groupphoto: Editing photo
+  uploaded_a_groupphoto: uploaded a Group photo
+  no_profile_groupphoto: No Group photo
+  view_all_my_groupphotos: View all Group photos

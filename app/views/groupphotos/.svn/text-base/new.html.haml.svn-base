@@ -1,0 +1,41 @@
+.yui-b
+  .box
+    %h3 Tips
+    %p 
+      =:groupphoto_tip_1.l
+    %p 
+      =:groupphoto_tip_2.l
+
+  .box.alt= link_to "&raquo; " + :back_to_my_groupphotos.l, group_groupphotos_path(@group)
+
+#yui-main
+  #single_upload.yui-b.box
+    %h3 
+      =:new_groupphoto.l
+
+    = error_messages_for :groupphoto
+    - form_for(:groupphoto, :url => group_groupphotos_path, :html => {:multipart =>true, :class => "MainForm"} ) do
+      = file_field :groupphoto, :uploaded_data, :size => "20"
+      %label
+        %em
+          = (AppConfig.groupphoto['attachment_fu_options']['max_size']) 
+          = " " + :megabyte_upload_limit.l
+      %label 
+        =:tags.l + ":"
+      = text_field_tag 'tag_list', @groupphoto.tag_list, {:autocomplete => "off", :size => 35}
+
+      #tag_list_auto_complete.auto_complete
+      = auto_complete_field 'tag_list', {:url => { :controller => "tags", :action => 'auto_complete_for_tag_name'}, :tokens => [',', ' ']  }
+
+      %label 
+        =:name.l + ":"
+      = text_field :name, :size => 35
+
+      %label
+        =:description.l + ":"
+      = text_area :description, :size => "58x5"
+
+      %p
+        = submit_tag :create.l
+        = :or.l
+        = link_to :cancel_and_go_back_to_my_groupphotos.l, group_groupphotos_path(@group)

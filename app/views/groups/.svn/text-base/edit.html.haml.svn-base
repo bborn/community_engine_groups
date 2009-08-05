@@ -1,0 +1,51 @@
+.yui-b
+  -@section = 'groups'
+
+#yui-main
+  .yui-b
+    .box
+      %h3= :editing_group.l
+      - form_tag( group_path(@group), :method => 'put', :multipart =>true, :class => "MainForm") do
+        = error_messages_for :group
+        %label
+          =:name.l
+          %br/
+          = text_field :group, :name
+        %label
+          =:sport.l
+          %br/
+          = select_tag(:sport_id, '<option></option>' + options_from_collection_for_select(current_user.sports, "id", "name", (@selected_sport_id rescue nil)), {:style => "width:100px", :disabled => current_user.sports.empty? })
+
+        #profile_details.box
+          %h3=:group_photo.l
+          = image_tag( @group.avatar_photo_url(:medium), :class => "polaroid" )
+          %br
+            =:choose_a_photo_for_your_group.l
+          %br
+          = file_field :avatar, :uploaded_data, :size => "20"
+
+
+        %h3= :location.l
+        = render :partial => 'shared/group_location_chooser', :locals => {:selected_country => @group.country_id, :selected_state => @group.state_id, :selected_metro_area => @group.metro_area_id, :states => @states, :metro_areas => @metro_areas}
+        %br
+        %br
+        %p
+          = submit_tag :update.l
+
+      = link_to :show.l, @group
+      |
+      = link_to :back.l, groups_path
+      |
+      = link_to :destroy.l, group_path(@group), :confirm => :are_you_sure.l, :method => :delete
+
+
+#yui-main2
+  .yui-b
+    - unless @groupphotos.empty?
+      #photos.box
+        %h3=:group_photos.l
+        - @groupphotos.each do |groupphoto|
+          = link_to image_tag( groupphoto.public_filename(:thumb), :class => "polaroid"), group_groupphoto_path(@group, groupphoto)
+
+        %h6.all.right= link_to :view_all_groupphotos.l, group_groupphotos_path(@group)
+        = "#{link_to(:add_a_groupphoto.l, new_group_groupphoto_path(@group))}" if @is_group_owner

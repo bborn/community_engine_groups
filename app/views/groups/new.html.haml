@@ -1,0 +1,22 @@
+.yui-b
+  -@section = 'groups'
+
+#yui-main
+  .yui-b
+    .box
+      %h3= :new_group.l
+
+      - form_for(@group) do |f|
+        = error_messages_for :group
+        = error_messages_for :membership
+        = error_messages_for :group_permission
+        %p
+          = f.label :name
+          %br/
+          = f.text_field :name
+        %h3= :location.l
+        = render :partial => 'shared/group_location_chooser', :locals => {:selected_country => @group.country_id, :selected_state => @group.state_id, :selected_metro_area => @group.metro_area_id, :states => @states, :metro_areas => @metro_areas}
+        %p
+          = f.submit "Create"
+      
+      = link_to 'Back', groups_path

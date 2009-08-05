@@ -1,0 +1,35 @@
+.profile
+  .yui-b
+
+    - if @previous || @next
+      .groupphoto_nav.box.alt
+        = link_to "<img src='#{@previous.public_filename(:thumb)}' /><br />&laquo; Prev ", group_groupphoto_path(@group, @previous), :class => 'left' if @previous
+        = link_to "<img src='#{@next.public_filename(:thumb)}' /><br />Next &raquo;", group_groupphoto_path(@group, @next), :class => 'right' if @next
+
+    - if @related.any?
+      .box.alt
+        %h3=:related_groupphotos_all_members.l
+        .centered
+          - @related.each do |groupphoto|
+            = link_to image_tag( groupphoto.public_filename(:thumb), :class => "polaroid"), group_groupphoto_path(groupphoto.group, groupphoto), {:title => "#{h(groupphoto.description)} from #{groupphoto.group.name}"}
+
+  #yui-main
+    .yui-b
+      .box.hfeed
+        %h3
+          = link_to "#{@group.name}'s "+:groupphotos.l, group_groupphotos_path(@group)
+          \:
+          = link_to h(@groupphoto.display_name), group_groupphoto_path(@group, @groupphoto)
+        - if @is_current_group
+          .box.alt
+            -#= link_to :make_this_my_profile_groupphoto.l, change_profile_groupphoto_group_path({:id => @group, :groupphoto_id => @groupphoto}), :method => :put
+            -#|
+            = link_to :edit_this_groupphoto_details.l, edit_group_groupphoto_path(@group, @groupphoto) if @is_current_group
+            |
+            = link_to(:delete_this_groupphoto.l, group_groupphoto_path(@group, @groupphoto), :method => :delete) + "<br class='clear' />"
+
+        %p.centered= image_tag( @groupphoto.public_filename, :class => "polaroid" )
+        %p= h @groupphoto.description
+        %p= @groupphoto.tags.collect{|t| link_to( h(t.name), tag_url(t.name), :class => 'tag') }.join(" ")
+
+

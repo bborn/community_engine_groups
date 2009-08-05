@@ -1,0 +1,19 @@
+<h1>New group_permission</h1>
+
+<% form_for(@group_permission) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :membership_id %><br />
+    <%= f.text_field :membership_id %>
+  </p>
+  <p>
+    <%= f.label :role_id %><br />
+    <%= f.text_field :role_id %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', group_permissions_path %>

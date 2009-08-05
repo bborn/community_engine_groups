@@ -6,3 +6,4 @@ end
 
 require_plugin 'community_engine'
 config.plugin_paths += ["#{RAILS_ROOT}/vendor/plugins/community_engine_groups/plugins"]
+

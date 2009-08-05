@@ -1,0 +1,9 @@
+xml.instruct!
+
+xml.gallery do 
+  xml.album :title=>:groupphotos.l, :lgPath=>"", :tnPath=>"" do 
+    @groupphotos.each do |groupphoto|
+      xml.img :src=> groupphoto.public_filename(:large), :tn=> groupphoto.public_filename(:thumb), :link => group_groupphoto_url(@group, groupphoto)
+    end
+  end
+end

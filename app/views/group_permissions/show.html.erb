@@ -1,0 +1,13 @@
+<p>
+  <b>Membership:</b>
+  <%=h @group_permission.membership_id %>
+</p>
+
+<p>
+  <b>Role:</b>
+  <%=h @group_permission.role_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_group_permission_path(@group_permission) %> |
+<%= link_to 'Back', group_permissions_path %>

@@ -1,0 +1,22 @@
+<h1>Listing group_permissions</h1>
+
+<table>
+  <tr>
+    <th>Membership</th>
+    <th>Role</th>
+  </tr>
+
+<% for group_permission in @group_permissions %>
+  <tr>
+    <td><%=h group_permission.membership_id %></td>
+    <td><%=h group_permission.role_id %></td>
+    <td><%= link_to 'Show', group_permission %></td>
+    <td><%= link_to 'Edit', edit_group_permission_path(group_permission) %></td>
+    <td><%= link_to 'Destroy', group_permission, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New group_permission', new_group_permission_path %>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/group_permissions
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/group_permissions/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/group_permissions/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/group_permissions/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/mygtms_milliondollarproject/!svn/ver/91/trunk/app/views/group_permissions/show.html.erb
+END

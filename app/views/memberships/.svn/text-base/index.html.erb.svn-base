@@ -1,0 +1,22 @@
+<h1>Listing memberships</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Group</th>
+  </tr>
+
+<% for membership in @memberships %>
+  <tr>
+    <td><%=h membership.user_id %></td>
+    <td><%=h membership.group_id %></td>
+    <td><%= link_to 'Show', membership %></td>
+    <td><%= link_to 'Edit', edit_membership_path(membership) %></td>
+    <td><%= link_to 'Destroy', membership, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New membership', new_membership_path %>

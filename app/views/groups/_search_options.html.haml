@@ -1,0 +1,10 @@
+.box.alt.first_alt
+  = link_to( "&raquo; #{:back_to_all_groups.l}", groups_path) if params['name'] || params['tag_list']
+  - form_tag groups_path, :method => :get , :class => 'MainForm' do
+    %label= :group_name.l+":"
+    = text_field_tag 'name', @search['name']
+    %br
+      = render :partial => 'shared/group_location_chooser', :locals => {:selected_country => @search['country_id'].to_i, :selected_state => @search['state_id'].to_i, :selected_metro_area => @search['metro_area_id'].to_i, :states => @states, :metro_areas => @metro_areas}
+    %p 
+      %input{"type"=>"submit", "value"=>:search_groups.l}
+
