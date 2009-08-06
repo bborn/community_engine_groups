@@ -3,7 +3,7 @@ CommunityEngine Groups
  
 This is a CommunityEngine plugin. It's designed to work with the CommunityEngine social networking platform, and won't work unless CE is properly installed.
 
-NOTE: This plugin is in super-alpha-please-be-careful-with-me form. It's very rough, but hopefully will help give people an idea of how to develop CE plugins, and develop into a more mature groups functionality for CE.
+NOTE: This plugin is in super-alpha-please-be-careful-with-me form. It's very rough, but hopefully will help give people an idea of how to develop CE plugins, and also evolve into a more mature groups functionality for CE.
 
 YOUR HELP IS NEEDED TO IMPROVE THIS PLUGIN! Please fork it, add tests, add documentation, add code, and send me pull requests. Thanks,
 Bruno
@@ -20,7 +20,7 @@ Installation
   script/generate plugin_migration
   rake db:migrate
   
-3. Run tests (well, there aren't many yet but there should be, soon)
+3. Run tests (more tests needed please!): rake community_engine_groups:test
 
 4. Start your server.
 
@@ -32,5 +32,15 @@ THANKS
 Special thanks to LeviRosol, who contributed the bulk of this initial codebase.
 
  
+TO DO
+=====
+- test coverage (lots of it)  
+- general refactoring (lots of stuff left over from copying from User object)  
+- track activities (group created, group joined)
+- make membership approval optional 
+- add group descriptions
+
+
+  
   
 Copyright (c) 2009 Bruno Bornsztein, released under the MIT license
