@@ -1,0 +1,16 @@
+%h1
+  New group_permission
+- form_for(@group_permission) do |f|
+  = f.error_messages
+  %p
+    = f.label :membership_id
+    %br
+    = f.text_field :membership_id
+  %p
+    = f.label :group_role_id
+    %br
+    = f.text_field :group_role_id
+  %p
+    = f.submit "Create"
+
+= link_to 'Back', group_permissions_path

@@ -5,18 +5,17 @@
   
 #yui-main
   .yui-b
-    .box.group_list
-      - if current_user 
-        = link_to :new_group.l, new_group_path
-
-      %h3=:site_groups.l :site => AppConfig.community_name
+    -box :class => "group_list" do
+      %h3
+        = link_to :new_group.l, new_group_path, :class => 'right' if logged_in?
+        =:site_groups.l :site => AppConfig.community_name
 
       .pagination= paginating_links @groups, :params => params if @groups.page_count > 1
 
       %br.clear
       - if @groups.any?
         = render :partial => "groups/group", :collection => @groups
-
       %br.clear
+      
       .pagination= paginating_links @groups, :params => params if @groups.page_count > 1
 

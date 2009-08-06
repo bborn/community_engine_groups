@@ -1,0 +1,23 @@
+%h1
+  Listing group_permissions
+%table
+  %tr
+    %th
+      Membership
+    %th
+      Role
+  - for group_permission in @group_permissions
+    %tr
+      %td
+        = h group_permission.membership_id
+      %td
+        = h group_permission.group_role_id
+      %td
+        = link_to 'Show', group_permission
+      %td
+        = link_to 'Edit', edit_group_permission_path(group_permission)
+      %td
+        = link_to 'Destroy', group_permission, :confirm => 'Are you sure?', :method => :delete
+
+%br
+= link_to 'New group_permission', new_group_permission_path

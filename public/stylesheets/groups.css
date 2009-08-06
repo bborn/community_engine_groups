@@ -1,20 +1,3 @@
-.grid_table th {
-    background:#CCCCCC url(/plugin_assets/community_engine/images/bg_grid_head.jpg) repeat-x scroll 0 0;
-    color:#000000;
-    font-weight:bold;
-    padding:6px 10px;
-    text-align:center;
-}
-
-.fullscreen {
-    margin:0 auto;
-    width:100%;
-}
-
-.odd { background: #efefef; }
-.even { background: #fff; }
-
-
 /* GROUP LIST */
 div.group_list .row {
 	border:1px solid #cccccc;

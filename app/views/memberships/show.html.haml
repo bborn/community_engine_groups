@@ -1,0 +1,11 @@
+%p
+  %b
+    User:
+  = h @membership.user_id
+%p
+  %b
+    Group:
+  = h @membership.group_id
+= link_to 'Edit', edit_membership_path(@membership)
+|
+= link_to 'Back', memberships_path

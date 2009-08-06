@@ -19,7 +19,7 @@ class Group < ActiveRecord::Base
   has_many :occurances_as_member, :class_name => "Membership", :foreign_key => "member_id", :dependent => :destroy
 
   has_many :memberships, :dependent => :destroy
-  has_many :users, :through => :membership
+  has_many :users, :through => :memberships
   has_many :groupphotos, :order => "created_at desc", :dependent => :destroy
   has_many :group_permissions
   
@@ -60,6 +60,14 @@ class Group < ActiveRecord::Base
     end
     
     return results
+  end
+  
+  def fans
+    members_in_role(["Fan"])    
+  end
+  
+  def method_name
+    
   end
 
   def recount_metro_area_groups

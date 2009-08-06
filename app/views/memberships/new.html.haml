@@ -1,0 +1,16 @@
+%h1
+  New membership
+- form_for(@membership) do |f|
+  = f.error_messages
+  %p
+    = f.label :user_id
+    %br
+    = f.text_field :user_id
+  %p
+    = f.label :group_id
+    %br
+    = f.text_field :group_id
+  %p
+    = f.submit "Create"
+
+= link_to 'Back', memberships_path

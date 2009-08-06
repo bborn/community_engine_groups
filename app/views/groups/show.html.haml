@@ -20,7 +20,7 @@
     %h3
       =:my_members.l
       = link_to "(#{@member_count})", accepted_group_memberships_path(@group) if @member_count > 5
-    -#= link_to "&raquo; #{:invite_a_member.l :site => AppConfig.community_name}", invite_group_path(@group) if @is_group_owner
+
     -if @pending_memberships_count > 0
       = link_to "&raquo; #{:view_all_my_member_requests.l} (#{@pending_memberships_count})", pending_group_memberships_path(@group) if @is_group_owner
       %br
