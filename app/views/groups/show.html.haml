@@ -30,37 +30,23 @@
       %h6.all
         =link_to :see_all.l, accepted_group_memberships_path(@group)
 
-  - unless @groups_comments.empty?
-    #groupphoto_comments.yui-g.box.alt
-      %h3=:groups_recent_comments.l
-      - @groups_comments.each do |comment|
-        %dl.vcard
-          %dt.photo
-            = link_to image_tag(comment.recipient.avatar_photo_url(:thumb), :alt => "#{comment.recipient.login}", :width => '50', :height => '50'), commentable_url(comment)
-          %dd.fn
-            - if comment.recipient.eql?(comment.commentable)
-              %strong= :to.l + ": #{link_to comment.recipient.login, commentable_url(comment)}"
-            - else
-              %strong= :to.l + ": #{link_to comment.recipient.login, user_path(comment.recipient)}"
-              %br
-              %strong= :on_commentable.l + ": #{link_to comment.commentable_name, commentable_url(comment)} (#{comment.commentable_type})"
-          %dd
-            %p= "\"#{truncate_words( comment.comment, 10, '...')}\""
 
 #yui-main
   .yui-b
-    - if @groupphotos.empty? #and @recent_posts.empty?
+    - if @groupphotos.empty?
       .box.alt.first_alt
         %h3= :small_group.l :group => @group.name
 
     - unless @groupphotos.empty?
       #photos.box
-        %h3=:groupphotos.l
+        %h3
+          = link_to(:add_a_groupphoto.l, new_group_groupphoto_path(@group), :class => 'right') if @is_group_owner          
+          =:groupphotos.l
         - @groupphotos.each do |groupphoto|
           = link_to image_tag( groupphoto.public_filename(:thumb), :class => "polaroid"), group_groupphoto_path(@group, groupphoto)
 
         %h6.all.right= link_to :view_all_my_groupphotos.l, group_groupphotos_path(@group)
-        = "#{link_to(:add_a_groupphoto.l, new_group_groupphoto_path(@group))}" if @is_group_owner
+
 
     #comments.box.hfeed.comments
       %h3=:group_comments.l

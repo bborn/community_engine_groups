@@ -27,23 +27,14 @@ class GroupsController < BaseController
 
   def show
     @group = Group.find(params[:id])
-    @groupphoto_comments = Comment.find_groupphoto_comments_for(@group)  
     @groupphotos = @group.groupphotos.find(:all, :limit => 5)
+    @comments   = @group.comments.find(:all, :limit => 10, :order => 'created_at DESC')
     
-    @comments       = @group.comments.find(:all, :limit => 10, :order => 'created_at DESC')
-    @groups_comments = Comment.find_group_comments_for(@group)
-    
-    if @group.owner == current_user
-      @is_group_owner = true
-    else
-      @is_group_owner = false
-    end
+    @is_group_owner = @group.owner.eql?(current_user)
 
     @member_count               = @group.accepted_memberships.count
     @accepted_memberships       = @group.accepted_memberships.find(:all, :limit => 5).collect{|f| f.member }
     @pending_memberships_count  = @group.pending_memberships.count()
-
-    update_view_count(@group) unless @group.owner && current_user.eql?(@group)
     
     respond_to do |format|
       format.html # show.html.erb
@@ -71,15 +62,9 @@ class GroupsController < BaseController
     @group = Group.find(params[:id])
     @metro_areas, @states = setup_locations_for(@group)
     @avatar = Groupphoto.new
-    @groupphoto_comments = Comment.find_groupphoto_comments_for(@group)  
-    @groupphotos = @group.groupphotos.find(:all, :limit => 5)
-    if @group.owner == current_user
-      @is_group_owner = true
-    else
-      @is_group_owner = false
-    end
-    
 
+    @groupphotos = @group.groupphotos.find(:all, :limit => 5)
+    @is_group_owner = @group.owner.eql?(current_user)
   end
 
   # POST /groups
@@ -103,21 +88,12 @@ class GroupsController < BaseController
     @group.state       = (@group.metro_area && @group.metro_area.state) ? @group.metro_area.state : nil
     @group.country     = @group.metro_area.country if (@group.metro_area && @group.metro_area.country)
 
-    
-    #current_user.track_activity(:created_a_group)
-    
-#    unless @user.is_in_group?(@group)
-#      @user.memberships << @group
-#    end
-
     respond_to do |format|
       if @group.save
         flash[:notice] = 'Group was successfully created.'
         format.html { redirect_to(@group) }
-        format.xml  { render :xml => @group, :status => :created, :location => @group }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
       end
     end
    
@@ -145,22 +121,17 @@ class GroupsController < BaseController
       if @group.update_attributes(params[:group])
         flash[:notice] = 'Group was successfully updated.'
         format.html { redirect_to(@group) }
-        format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @group.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /groups/1
-  # DELETE /groups/1.xml
   def destroy
     Group.destroy(params[:id])
 
     respond_to do |format|
       format.html { redirect_to(groups_url) }
-      format.xml  { head :ok }
     end
   end
   
@@ -183,23 +154,6 @@ class GroupsController < BaseController
       :selected_country => params[:country_id].to_i, 
       :selected_state => params[:state_id].to_i, 
       :selected_metro_area => nil }
-  end
-
-  def change_profile_photo
-    @group   = Group.find(params[:id])
-    @groupphoto  = Grouphoto.find(params[:groupphoto_id])
-    @group.avatar = @groupphoto
-
-    if @group.save!
-      flash[:notice] = :your_changes_were_saved.l
-      redirect_to group_groupphoto_path(@group, @groupphoto)
-    end
-  rescue ActiveRecord::RecordInvalid
-    render :action => 'edit'
-  end
-
-  def welcome_groupphoto
-    @group = Group.find(params[:id])
   end
 
   def roster

@@ -39,9 +39,12 @@
   .yui-b
     - unless @groupphotos.empty?
       #photos.box
-        %h3=:group_photos.l
+        %h3
+          = link_to( '+', new_group_groupphoto_path(@group), :class => 'right') if @is_group_owner          
+          =:groupphotos.l
+        
         - @groupphotos.each do |groupphoto|
           = link_to image_tag( groupphoto.public_filename(:thumb), :class => "polaroid"), group_groupphoto_path(@group, groupphoto)
 
         %h6.all.right= link_to :view_all_groupphotos.l, group_groupphotos_path(@group)
-        = "#{link_to(:add_a_groupphoto.l, new_group_groupphoto_path(@group))}" if @is_group_owner
+
