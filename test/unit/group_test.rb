@@ -1,22 +1,7 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
 class GroupTest < ActiveSupport::TestCase
-  # Be sure to include AuthenticatedTestHelper in test/test_helper.rb instead.
-  # Then, you can remove it from this and the functional test.
   fixtures :all
-
-  # Called before every test method runs. Can be used
-  # to set up fixture information.
-  def setup
-    # Do nothing
-  end
-
-  # Called after every test method runs. Can be used to tear
-  # down fixture information.
-
-  def teardown
-    # Do nothing
-  end
 
   def test_should_create_group
     assert_difference Group, :count do
