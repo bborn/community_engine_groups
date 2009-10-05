@@ -9,16 +9,21 @@ YOUR HELP IS NEEDED TO IMPROVE THIS PLUGIN! Please fork it, add tests, add docum
 Bruno
 
 Installation
-============
+------------
 
 1. Install the plugin into your vendor directory: 
 
-  script/plugin install git://github.com/bborn/community_engine_groups.git
+      
+    script/plugin install git://github.com/bborn/community_engine_groups.git
 
 2. Create and run its migrations:
 
-  script/generate plugin_migration
-  rake db:migrate
+    script/generate plugin_migration
+    rake db:migrate
+  
+3. Add group routes to your routes.rb file: 
+
+    map.routes_from_plugin :community_engine_groups
   
 3. Run tests (more tests needed please!): rake community_engine_groups:test
 
@@ -27,18 +32,18 @@ Installation
 Go to /groups to see what's available. Administrators can create new groups.
 
 THANKS
-======
+------
 
 Special thanks to LeviRosol, who contributed the bulk of this initial codebase.
 
  
 TO DO
-=====
-- test coverage (lots of it)  
-- general refactoring (lots of stuff left over from copying from User object)  
-- track activities (group created, group joined)
-- make membership approval optional 
-- add group descriptions
+-----
+  - test coverage (lots of it)  
+  - general refactoring (lots of stuff left over from copying from User object)  
+  - track activities (group created, group joined)
+  - make membership approval optional 
+  - add group descriptions
 
 
   
