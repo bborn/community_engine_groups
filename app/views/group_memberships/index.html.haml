@@ -1,0 +1,8 @@
+-box do
+  %ul
+    -@group_memberships.each do |group_membership|
+      %li 
+        =group_membership.user.login
+        = "(#{:owner.l})" if group_membership.owner
+        -if group_membership.can_be_removed_by?(current_user)
+          =button_to :delete.l, group_membership_path(@group, group_membership), :method => :delete

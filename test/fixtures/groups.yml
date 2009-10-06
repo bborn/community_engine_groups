@@ -1,8 +1,15 @@
-GroupOne:
-  id: 1
-  name: Group 1
-  state_id: 1
-  metro_area_id: 1
-  created_at: <%= 5.days.ago.to_s :db %>
-  description: this is group 1
-  view_count: 0
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+dogs_group:
+  name: A Group for Dogs
+  short_description: We love dogs.
+  long_description: We really love canines and everything about them.
+  public: true
+  owner_id: 1 #quentin
+
+two:
+  name: A Group for Cars
+  short_description: We love cats.
+  long_description: Cats are the very best animals.
+  public: true
+  owner_id: 2 #aaron

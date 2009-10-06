@@ -1,52 +1,23 @@
-- @meta = { :description => "#{@group.name}'s profile on #{AppConfig.community_name}.", :keywords => "#{@group.name}, #{@group.tags.join(", ") unless @group.tags.nil?}", :robots => AppConfig.robots_meta_show_content }
-- @sidebar_left = true
-- @section = 'groups'
 
-.yui-b
-  .box
-    -if @is_group_owner
-      %p
-
-    = render :partial => 'profile_group_info_sidebar', :locals => {:group => @group}
-
-  #about_me.box
-  - if @group.description
-    #about_me.box
-      %h3
-        =:about_me.l
-      %p= @group.description
-
-  #members.box.alt
-    %h3
-      =:my_members.l
-      = link_to "(#{@member_count})", accepted_group_memberships_path(@group) if @member_count > 5
-
-    -if @pending_memberships_count > 0
-      = link_to "&raquo; #{:view_all_my_member_requests.l} (#{@pending_memberships_count})", pending_group_memberships_path(@group) if @is_group_owner
-      %br
-    -@accepted_memberships.each do |user|
-      =render :partial => "users/sidebar_user", :locals => {:user => user}
-    -if @accepted_memberships.size > 4
-      %h6.all
-        =link_to :see_all.l, accepted_group_memberships_path(@group)
-
+.yui-b= render :partial => "groups/sidebar"
 
 #yui-main
   .yui-b
-    - if @groupphotos.empty?
-      .box.alt.first_alt
-        %h3= :small_group.l :group => @group.name
+  
+    -box do
+      %h3=@group.name
 
-    - unless @groupphotos.empty?
-      #photos.box
+      - if @group.short_description
+        %p= @group.short_description  
+  
+    - if @group.photos.any?
+      -box do
         %h3
-          = link_to(:add_a_groupphoto.l, new_group_groupphoto_path(@group), :class => 'right') if @is_group_owner          
-          =:groupphotos.l
-        - @groupphotos.each do |groupphoto|
-          = link_to image_tag( groupphoto.public_filename(:thumb), :class => "polaroid"), group_groupphoto_path(@group, groupphoto)
+          = link_to :new_group_photo.l, new_group_photo_path, :class => 'right' if logged_in?  
+          = :group_photos.l :name => @group.name
 
-        %h6.all.right= link_to :view_all_my_groupphotos.l, group_groupphotos_path(@group)
-
+        - @group.photos.each do |photo|
+          = link_to image_tag( photo.public_filename(:thumb)), group_photo_path(@group, photo)
 
     #comments.box.hfeed.comments
       %h3=:group_comments.l
@@ -56,3 +27,4 @@
       = render :partial => 'comments/comment', :collection => @comments
       %span#more_comments_links= more_comments_links(@group)
 
+          
