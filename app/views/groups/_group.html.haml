@@ -1,1 +1,3 @@
-%li=link_to group.name, group
+%li
+  =link_to group.name, group
+  ="(#{:private.l})" unless group.public?

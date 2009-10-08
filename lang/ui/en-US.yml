@@ -1,6 +1,8 @@
 en:
 
+  #group
   administer_group: Administer Group
+  created_a_group: "created a group:"
   edit_group: Edit Group  
   destroy_group_header: Destroy group?
   destroy_group_button: Click here to permanently destroy this group
@@ -9,20 +11,25 @@ en:
   groups: Groups
   group_details: Group Details
   group_comments: Group Comments
-  group_members: Group Members
   group_public_or_private: This group is {{privacy}}  
-  leave_group: Leave Group
-  join_group: Join Group
   owner: owner
   new_group: New Group
   public: public
   private: private
   site_groups: "{{site}} Groups"
-  user_was_removed_by_group_owner: You have removed that user from the group.
-  user_left_group: You have left this group.
-  user_joined_group: You have joined this group.
 
 
   #group photos
   group_photos: "{{name}}'s photos"
   new_group_photo: New Photo
+  
+  #group members
+  deactivate: Deactivate
+  group_members: Group Members  
+  invite_members: Invite Members  
+  join_group: Join Group  
+  leave_group: Leave Group
+  user_was_removed_by_group_owner: You have removed that user from the group.
+  user_left_group: You have left this group.
+  user_joined_group: You have joined this group.
+  

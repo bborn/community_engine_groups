@@ -6,12 +6,15 @@ class Group < ActiveRecord::Base
 
   has_many :group_memberships, :dependent => :destroy
   has_many :members, :through => :group_memberships, :source => :user
+  has_many :active_members, :through => :group_memberships, :source => :user, :conditions => ["active = ?", true]
   has_many :owners,  :through => :group_memberships, :conditions => ['owner = ?', true], :source => :user
   
   has_many    :photos, :as => :attachable, :dependent => :destroy, :class_name => "GroupPhoto"
   belongs_to  :avatar, :class_name => "GroupPhoto"   
   validates_associated :avatar  
   after_save  :save_avatar  
+  
+  acts_as_activity :user
   
   #weird hacks because commentable_controller is pretty brittle and needs refactoring
   def user_id

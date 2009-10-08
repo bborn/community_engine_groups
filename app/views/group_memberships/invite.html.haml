@@ -1,0 +1,15 @@
+-box do 
+  %h3= :invite_members.l
+  
+  - form_tag invite_group_memberships_path(@group), :html => {:class => "MainForm"} do |f|
+
+    %label
+      =:type_a_username.l
+    %br  
+    = text_field_tag 'user_names', '', {:autocomplete => "off", :size => 35, :id => "user_names"}
+    .auto_complete#user_names_auto_complete
+      = auto_complete_field 'user_names', {:url => auto_complete_for_username_group_memberships_path(@group), :tokens=>','}
+
+    %p
+      = submit_tag :send.l
+  
