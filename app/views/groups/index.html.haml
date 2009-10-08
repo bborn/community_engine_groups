@@ -1,7 +1,14 @@
 - @section = 'groups'
 
 .yui-b
-
+  -if logged_in? && current_user.groups.any?
+    -box do
+      %h3=:memberships.l
+      %ul
+        -current_user.groups.each do |group|
+          %li=link_to group.name, group
+  
+  
   
 #yui-main
   .yui-b
@@ -14,8 +21,9 @@
 
       %br.clear
       - if @groups.any?
-        = render :partial => "groups/group", :collection => @groups
+        %ul= render :partial => "groups/group", :collection => @groups
       %br.clear
       
       .pagination= paginating_links @groups, :params => params if @groups.page_count > 1
+
 

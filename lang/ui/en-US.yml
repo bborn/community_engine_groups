@@ -29,6 +29,7 @@ en:
   invite_members: Invite Members  
   join_group: Join Group  
   leave_group: Leave Group
+  memberships: Memberships
   user_was_removed_by_group_owner: You have removed that user from the group.
   user_left_group: You have left this group.
   user_joined_group: You have joined this group.
