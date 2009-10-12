@@ -4,7 +4,7 @@
     
   .centered
 
-    = image_tag( group.avatar_photo_url, :class => 'polaroid')
+    = image_tag( group.avatar_photo_url(:medium), :class => 'polaroid')
 
     - if @is_group_owner
       %br
