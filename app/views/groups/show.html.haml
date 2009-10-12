@@ -10,14 +10,13 @@
       - if @group.short_description
         %p= @group.short_description  
   
-    - if @group.photos.any?
-      -box do
-        %h3
-          = link_to :new_group_photo.l, new_group_photo_path, :class => 'right' if logged_in?  
-          = :group_photos.l :name => @group.name
+    -box do
+      %h3
+        = link_to :new_group_photo.l, new_group_photo_path(@group), :class => 'right' if logged_in?  
+        = :group_photos.l :name => @group.name
 
-        - @group.photos.each do |photo|
-          = link_to image_tag( photo.public_filename(:thumb)), group_photo_path(@group, photo)
+      - @group.photos.each do |photo|
+        = link_to image_tag( photo.public_filename(:thumb)), group_photo_path(@group, photo)
 
     #comments.box.hfeed.comments
       %h3=:group_comments.l

@@ -1,0 +1,17 @@
+-box do
+  %h3
+    = link_to group.name, group_path(group)
+    
+  .centered
+
+    = image_tag( group.avatar_photo_url, :class => 'polaroid')
+
+    - if @is_group_owner
+      %br
+      =:no_profile_groupphoto.l
+      = link_to :click_here_to_upload_one.l, edit_group_path(group)
+    
+  %br.clear
+  %h3=:group_details.l
+
+  =:group_public_or_private.l :privacy => group.public? ? :public.l : :private.l

@@ -1,0 +1,13 @@
+-if logged_in?
+  -if @group.is_owned_by?(current_user)
+    -box :class => 'first_alt alt' do
+      %h3
+        =:administer_group.l
+      %p
+        = link_to :edit_group.l, edit_group_path(@group)
+      %p
+        = link_to :group_members.l, group_memberships_path(@group)
+      %p
+        = link_to :invite_members.l, invite_group_memberships_path(@group)
+
+= render :partial => "groups/join_leave_links", :locals => {:user => current_user,m :group => @group}        

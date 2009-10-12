@@ -1,0 +1,3 @@
+-box :class => "alt", :id => "members" do
+  -group.active_members.each do |user|
+    =render :partial => "users/sidebar_user", :locals => {:user => user}

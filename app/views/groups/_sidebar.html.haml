@@ -1,47 +1,8 @@
       
--if logged_in?
-  -if @group.is_owned_by?(current_user)
-    -box :class => 'first_alt alt' do
-      %h3
-        =:administer_group.l
-      %p
-        = link_to :edit_group.l, edit_group_path(@group)
-      %p
-        = link_to :group_members.l, group_memberships_path(@group)
-      %p
-        = link_to :invite_members.l, invite_group_memberships_path(@group)
-
-        
-  -elsif current_user.can_request_group_membership?(@group)
-    -box :class => 'first_alt alt' do
-      =button_to :join_group.l, group_memberships_path(@group)
-  -elsif current_user.is_member_of?(@group)
-    -box :class => 'first_alt alt' do
-      =button_to :leave_group.l, group_membership_path(@group, @group.membership(current_user)), :method => :delete
+= render :partial => 'groups/group_management_links'
     
-
-
--box do
-  %h3
-    = link_to @group.name, group_path(@group)
     
-  .centered
-
-    - if @group.avatar
-      = image_tag( @group.avatar_photo_url(:medium), :class => 'polaroid')
-
-    - if @is_group_owner
-      %br
-      =:no_profile_groupphoto.l
-      = link_to :click_here_to_upload_one.l, edit_group_path(@group)
-    
-
-  %h3=:group_details.l
-
-  =:group_public_or_private.l :privacy => @group.public? ? :public.l : :private.l
+= render :partial => 'groups/sidebar_details', :locals => {:group => @group}    
 
 
--box :class => "alt", :id => "members" do
-
-  -@group.active_members.each do |user|
-    =render :partial => "users/sidebar_user", :locals => {:user => user}
+= render :partial => 'groups/sidebar_members_list', :locals => {:group => @group}
