@@ -1,0 +1,12 @@
+-box do
+  %h3
+    = link_to :new_group_photo.l, new_group_photo_path, :class => 'right' if logged_in?  
+    = :group_photos.l :name => @group.name
+    
+  
+  %ul
+    -@group_photos.each do |photo|
+      %li
+        =image_tag photo.public_filename(:thumb)
+        -if @group.avatar.eql?(photo)
+          (Group Avatar)

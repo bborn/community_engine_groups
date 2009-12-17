@@ -1,0 +1,11 @@
+Hey <%= @group_membership.user.login %>!
+
+You have been invited to join the <%= @group_membership.group.name %> group!
+
+
+To activate your membership, visit this link:
+
+<%= @url %> 
+
+Thanks,
+The <%= AppConfig.community_name %> team

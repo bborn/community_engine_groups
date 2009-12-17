@@ -1,8 +1,0 @@
-GroupOne:
-  id: 1
-  name: Group 1
-  state_id: 1
-  metro_area_id: 1
-  created_at: <%= 5.days.ago.to_s :db %>
-  description: this is group 1
-  view_count: 0

@@ -1,0 +1,46 @@
+.yui-b= render :partial => "groups/sidebar"
+
+
+#yui-main
+  .yui-b
+    -box do
+      
+      %h3= :group_members.l
+      
+      
+      -if @group_memberships.page_count > 1
+        .pagination= paginating_links @group_memberships, :link_to_current_page => true
+
+      %table{"cellspacing"=>"0", "border"=>"0", "cellpadding"=>"0", "width"=>"100%"}
+        %tr
+          %th=:login.l
+          -if @owner_or_admin
+            %th=:e_mail.l
+            %th=:status.l
+            %th=:actions.l
+
+        - @group_memberships.each do |group_membership|
+          - user = group_membership.user
+          %tr{:id => "group_membership_#{group_membership.id}"}
+            %td
+              = link_to h(user.login), user_path(user)
+              -if group_membership.owner?
+                ="(#{:owner.l})"
+            -if @owner_or_admin
+              %td= h user.email
+              %td
+                - if group_membership.active? 
+                  =:active.l
+                  -if group_membership.can_be_removed_by?(current_user)
+                    ='('+ link_to(:deactivate.l, deactivate_group_membership_path(@group, group_membership), :method => :put) +')'
+                -else
+                  =:inactive.l
+                  -if group_membership.can_be_removed_by?(current_user)
+                    ='('+ link_to(:activate.l, activate_group_membership_path(@group, group_membership), :method => :put) +')'
+                  
+              %td
+                -if group_membership.can_be_removed_by?(current_user)
+                  = link_to_remote(image_tag('icons/delete.png', :plugin => 'community_engine'), {:url => group_membership_path(@group, group_membership), :method => :delete, :success => visual_effect(:fade, "group_membership_#{group_membership.id}")} )
+
+      -if @group_memberships.page_count > 1
+        .pagination= paginating_links @group_memberships, :link_to_current_page => true

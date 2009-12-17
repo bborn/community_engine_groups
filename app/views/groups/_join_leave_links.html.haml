@@ -1,0 +1,6 @@
+-if user
+  -box :class => 'first_alt alt' do
+    -if user.can_request_group_membership?(@group)
+      =button_to :join_group.l, group_memberships_path(@group)
+    -elsif user.is_member_of?(@group)
+      =button_to :leave_group.l, group_membership_path(@group, @group.membership(user)), :method => :delete      

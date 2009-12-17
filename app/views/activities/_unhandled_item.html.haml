@@ -1,0 +1,4 @@
+- case activity.item_type 
+  - when 'Group'
+    =:created_a_group.l
+    = link_to activity.item.name, groups_path(activity.item)

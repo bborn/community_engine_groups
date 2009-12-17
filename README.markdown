@@ -1,7 +1,8 @@
-CommunityEngine Groups
-======================
+Groups
+======
  
 This is a CommunityEngine plugin. It's designed to work with the CommunityEngine social networking platform, and won't work unless CE is properly installed.
+<<<<<<< HEAD:README.markdown
 
 NOTE: This plugin is in super-alpha-please-be-careful-with-me form. It's very rough, but hopefully will help give people an idea of how to develop CE plugins, and also evolve into a more mature groups functionality for CE.
 
@@ -49,3 +50,14 @@ TO DO
   
   
 Copyright (c) 2009 Bruno Bornsztein, released under the MIT license
+=======
+ 
+ 
+How To Build Your CE Plugin
+===========================
+ 
+Start building the functionality of your plugin by adding models and controllers in the plugin's app directory. This plugin will be loaded after the rest of CE, so you can override CE models and controllers here.
+ 
+ 
+Copyright (c) 2009 [name of plugin creator], released under the MIT license
+>>>>>>> 7844310784197ac13c8a71aa075278649f545438:README
