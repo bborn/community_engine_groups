@@ -10,4 +10,4 @@
       %p
         = link_to :invite_members.l, invite_group_memberships_path(@group)
 
-= render :partial => "groups/join_leave_links", :locals => {:user => current_user,m :group => @group}        
+= render :partial => "groups/join_leave_links", :locals => {:user => current_user, :group => @group}        
