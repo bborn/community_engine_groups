@@ -1,9 +1,6 @@
 Groups
 ======
  
-This is a CommunityEngine plugin. It's designed to work with the CommunityEngine social networking platform, and won't work unless CE is properly installed.
-<<<<<<< HEAD:README.markdown
-
 NOTE: This plugin is in super-alpha-please-be-careful-with-me form. It's very rough, but hopefully will help give people an idea of how to develop CE plugins, and also evolve into a more mature groups functionality for CE.
 
 YOUR HELP IS NEEDED TO IMPROVE THIS PLUGIN! Please fork it, add tests, add documentation, add code, and send me pull requests. Thanks,
@@ -14,23 +11,24 @@ Installation
 
 1. Install the plugin into your vendor directory: 
 
-      
-    script/plugin install git://github.com/bborn/community_engine_groups.git
+        script/plugin install git://github.com/bborn/community_engine_groups.git
 
-2. Create and run its migrations:
+2.  Run the install template:
 
-    script/generate plugin_migration
-    rake db:migrate
+        rake rails:template LOCATION=vendor/plugins/community_engine_groups/install_template.rb    
   
-3. Add group routes to your routes.rb file: 
-
-    map.routes_from_plugin :community_engine_groups
-  
-3. Run tests (more tests needed please!): rake community_engine_groups:test
+3. Run tests (more tests needed please!): `rake community_engine_groups:test`
 
 4. Start your server.
 
-Go to /groups to see what's available. Administrators can create new groups.
+Go to `/groups` to see what's available. Administrators can create new groups.
+
+
+Requirements
+------------
+- formtastic gem [http://gemcutter.org/gems/formtastic](http://gemcutter.org/gems/formtastic)
+- resource_controller plugin [http://gemcutter.org/gems/formtastic](http://github.com/giraffesoft/resource_controller)
+
 
 THANKS
 ------
@@ -50,14 +48,3 @@ TO DO
   
   
 Copyright (c) 2009 Bruno Bornsztein, released under the MIT license
-=======
- 
- 
-How To Build Your CE Plugin
-===========================
- 
-Start building the functionality of your plugin by adding models and controllers in the plugin's app directory. This plugin will be loaded after the rest of CE, so you can override CE models and controllers here.
- 
- 
-Copyright (c) 2009 [name of plugin creator], released under the MIT license
->>>>>>> 7844310784197ac13c8a71aa075278649f545438:README

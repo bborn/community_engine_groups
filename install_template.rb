@@ -6,6 +6,10 @@ in_root do
   run_ruby_script "script/generate plugin_migration"
 end
 
+plugin 'resource_controller', :git => 'git://github.com/giraffesoft/resource_controller.git', :submodule => true
+  
+config.gem "formtastic", :source => 'http://gems.gemcutter.com'  
+
 # Migrate
 rake('db:migrate')
 
