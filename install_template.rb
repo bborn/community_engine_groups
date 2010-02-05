@@ -8,7 +8,10 @@ end
 
 plugin 'resource_controller', :git => 'git://github.com/giraffesoft/resource_controller.git', :submodule => true
   
-config.gem "formtastic", :source => 'http://gems.gemcutter.com'  
+gem "formtastic", :source => 'http://gems.gemcutter.com'  
+gem 'factory_girl', :source => 'http://gems.gemcutter.com'  
+gem 'flexmock', :source => 'http://gems.gemcutter.com'  
+gem 'mocha', :source => 'http://gems.gemcutter.com'  
 
 # Migrate
 rake('db:migrate')
