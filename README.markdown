@@ -1,5 +1,5 @@
-Groups
-======
+Groups [v.9.0]
+==============
  
 NOTE: This plugin is in super-alpha-please-be-careful-with-me form. It's very rough, but hopefully will help give people an idea of how to develop CE plugins, and also evolve into a more mature groups functionality for CE.
 
@@ -27,7 +27,7 @@ Go to `/groups` to see what's available. Administrators can create new groups.
 Requirements
 ------------
 - formtastic gem [http://gemcutter.org/gems/formtastic](http://gemcutter.org/gems/formtastic)
-- resource_controller plugin [http://gemcutter.org/gems/formtastic](http://github.com/giraffesoft/resource_controller)
+- resource_controller plugin [http://github.com/jamesgolick/resource_controller](http://github.com/jamesgolick/resource_controller)
 
 
 THANKS

@@ -6,7 +6,7 @@ in_root do
   run_ruby_script "script/generate plugin_migration"
 end
 
-plugin 'resource_controller', :git => 'git://github.com/giraffesoft/resource_controller.git', :submodule => true
+plugin 'resource_controller', :git => 'git://github.com/jamesgolick/resource_controller.git', :submodule => true
   
 gem "formtastic", :source => 'http://gems.gemcutter.com'  
 gem 'factory_girl', :source => 'http://gems.gemcutter.com'  
