@@ -1,1 +1,4 @@
-=image_tag @photo.public_filename
+
+-box do
+  %h3= :group_photos.l :name => @group.name
+  =image_tag @photo.public_filename

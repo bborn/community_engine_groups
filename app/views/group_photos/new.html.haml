@@ -1,9 +1,8 @@
 -box do
-  - semantic_form_for @group_photo, :html => {:class => "MainForm", :multipart => true} do |form|
+  - form_for :photo, @photo, :url => {:action => 'create'}, :html => {:class => "MainForm", :multipart => true} do |form|
+    = form.label :choose_a_photo_to_upload.l
+    = form.file_field :uploaded_data
 
-    -form.inputs do
-      = form.input :uploaded_data, :as => :file, :label => :choose_a_photo_to_upload.l, :hint => "#{AppConfig.photo['attachment_fu_options']['max_size']} #{:megabyte_upload_limit.l}"
-      
     %p
       = form.submit :create.l
 

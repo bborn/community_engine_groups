@@ -5,7 +5,7 @@
     
   
   %ul
-    -@group_photos.each do |photo|
+    -@photos.each do |photo|
       %li
         =image_tag photo.public_filename(:thumb)
         -if @group.avatar.eql?(photo)
